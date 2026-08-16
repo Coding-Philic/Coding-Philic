@@ -20,10 +20,11 @@
 <!-- Plain-text about — always visible even without SVG rendering -->
 <div align="center">
   <strong>Adnan Khan</strong> · Coding-Philic<br/>
-  <strong>Frontend Developer</strong> · building multi-agent systems, RAG pipelines, and LLM evals at <strong>Spectatr AI</strong><br/>
-  HTML · CSS · JavaScript · React<br/>
+  <strong>AI Engineer</strong> · building multi-agent systems, RAG pipelines, and LLM evals at <strong>Spectatr AI</strong><br/>
+  Next JS · Python · TypeScript · React<br/>
   Lucknow, India<br/>
-  <em>Google GenAI Exchange Hackathon Winner</em><br/>
+  <em>Top 100 Finalist: AI Pitch-a-thon</em><br/>
+  <em>Winner: Northern India Science Fair</em><br/>
 </div>
 
 <br/>
