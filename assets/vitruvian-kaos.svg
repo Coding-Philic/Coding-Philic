@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -10 800 540" width="800" height="540">
+<defs>
+<style>
+.center-ring{transform-origin:400px 260px}
+@keyframes ring-flow-cw{
+  from{stroke-dashoffset:0}
+  to{stroke-dashoffset:-346}
+}
+@keyframes ring-flow-ccw{
+  from{stroke-dashoffset:0}
+  to{stroke-dashoffset:346}
+}
+@keyframes node-breathe{
+  0%,100%{opacity:0.7}
+  50%{opacity:1}
+}
+@keyframes spin-cw{
+  from{transform:rotate(0deg)}
+  to{transform:rotate(360deg)}
+}
+@keyframes spoke-pulse{
+  0%,100%{stroke-dashoffset:0;opacity:0.3}
+  50%{stroke-dashoffset:-24;opacity:0.6}
+}
+@keyframes phosphor-pulse{
+  0%,100%{opacity:0.8}
+  50%{opacity:1}
+}
+@keyframes data-panel-blink{
+  0%,90%,100%{opacity:1}
+  95%{opacity:0.3}
+}
+@keyframes dot-drift{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-3px)}
+}
+</style>
+<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="2" result="blur"/>
+  <feMerge>
+    <feMergeNode in="blur"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
+  <feGaussianBlur stdDeviation="6" result="blur"/>
+  <feMerge>
+    <feMergeNode in="blur"/>
+    <feMergeNode in="SourceGraphic"/>
+  </feMerge>
+</filter>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+  <circle cx="20" cy="20" r="0.8" fill="#94a3b8" opacity="0.08"/>
+</pattern>
+</defs>
+
+<!-- Background -->
+<rect width="800" height="520" fill="#0a0f1e"/>
+<rect width="800" height="520" fill="url(#grid)" style="animation:phosphor-pulse 4.2s ease-in-out infinite"/>
+
+<!-- Background scatter dots -->
+<circle cx="52" cy="38" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 0s"/>
+<circle cx="135" cy="95" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 0.5s"/>
+<circle cx="78" cy="180" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 1s"/>
+<circle cx="45" cy="310" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 1.5s"/>
+<circle cx="110" cy="420" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 2s"/>
+<circle cx="68" cy="485" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 2.5s"/>
+<circle cx="720" cy="45" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 3s"/>
+<circle cx="755" cy="130" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 3.5s"/>
+<circle cx="690" cy="210" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 4s"/>
+<circle cx="740" cy="340" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 4.5s"/>
+<circle cx="710" cy="440" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 5s"/>
+<circle cx="760" cy="490" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 5.5s"/>
+<circle cx="220" cy="22" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 6s"/>
+<circle cx="580" cy="35" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 6.5s"/>
+<circle cx="310" cy="498" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 7s"/>
+<circle cx="510" cy="502" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 7.5s"/>
+<circle cx="160" cy="350" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 1.2s"/>
+<circle cx="640" cy="370" r="1" fill="#334155" opacity="0.3" style="animation:dot-drift 8s ease-in-out infinite 2.7s"/>
+
+<!-- 6 Spoke Rays (60 degree intervals, extending to r=240) -->
+<g>
+<line x1="400" y1="260" x2="640" y2="260" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 0s"/>
+<line x1="400" y1="260" x2="520" y2="52" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 0.83s"/>
+<line x1="400" y1="260" x2="280" y2="52" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 1.66s"/>
+<line x1="400" y1="260" x2="160" y2="260" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 2.5s"/>
+<line x1="400" y1="260" x2="280" y2="468" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 3.33s"/>
+<line x1="400" y1="260" x2="520" y2="468" stroke="#334155" stroke-width="0.5" stroke-dasharray="4 8" style="animation:spoke-pulse 5s ease-in-out infinite 4.16s"/>
+</g>
+
+<!-- Ring 4 (r=233) - TOOLS & FRONTIER - amber -->
+<circle cx="400" cy="260" r="233" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="16 14" opacity="0.3" style="animation:ring-flow-ccw 26s linear infinite"/>
+
+<!-- Ring 3 (r=144) - INFRASTRUCTURE & DATA - neutral ring -->
+<circle cx="400" cy="260" r="144" fill="none" stroke="#1e293b" stroke-width="1" stroke-dasharray="12 10" opacity="0.5" style="animation:ring-flow-cw 20s linear infinite"/>
+
+<!-- Ring 2 (r=89) - AI/ML FRAMEWORKS - mid-pink -->
+<circle cx="400" cy="260" r="89" fill="none" stroke="#f472b6" stroke-width="1.5" stroke-dasharray="10 8" opacity="0.45" style="animation:ring-flow-ccw 16s linear infinite"/>
+
+<!-- Ring 1 (r=55) - CORE LANGUAGES - bright pink -->
+<circle cx="400" cy="260" r="55" fill="none" stroke="#ec4899" stroke-width="1.5" stroke-dasharray="8 6" opacity="0.6" style="animation:ring-flow-cw 12s linear infinite"/>
+
+<!-- Center Core -->
+<circle cx="400" cy="260" r="22" fill="#ec4899" opacity="0.15" filter="url(#bloom)"/>
+<circle cx="400" cy="260" r="20" fill="#0a0f1e" stroke="#ec4899" stroke-width="2"/>
+<circle cx="400" cy="260" r="25" fill="none" stroke="#f472b6" stroke-width="0.5" stroke-dasharray="4 6" class="center-ring" style="animation:spin-cw 8s linear infinite"/>
+<text x="400" y="264" text-anchor="middle" fill="#ec4899" font-size="12" font-weight="bold" font-family="'Courier New', monospace" style="animation:phosphor-pulse 3s ease-in-out infinite">CP</text>
+
+<!-- ============================================ -->
+
+<!-- RING 1 NODES -->
+
+<!-- PYTHON -->
+<circle cx="400.0" cy="205.0" r="7" fill="#ec4899" opacity="0.15"/>
+<circle cx="400.0" cy="205.0" r="7" fill="#ec4899" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.0s"/>
+<text x="400.0" y="223.0" text-anchor="middle" fill="#ec4899" font-size="8" font-family="'Courier New', monospace">PYTHON</text>
+
+<!-- C++ -->
+<circle cx="455.0" cy="260.0" r="7" fill="#ec4899" opacity="0.15"/>
+<circle cx="455.0" cy="260.0" r="7" fill="#ec4899" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.3s"/>
+<text x="455.0" y="278.0" text-anchor="middle" fill="#ec4899" font-size="8" font-family="'Courier New', monospace">C++</text>
+
+<!-- JS -->
+<circle cx="400.0" cy="315.0" r="7" fill="#ec4899" opacity="0.15"/>
+<circle cx="400.0" cy="315.0" r="7" fill="#ec4899" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.6s"/>
+<text x="400.0" y="333.0" text-anchor="middle" fill="#ec4899" font-size="8" font-family="'Courier New', monospace">JS</text>
+
+<!-- TS -->
+<circle cx="345.0" cy="260.0" r="7" fill="#ec4899" opacity="0.15"/>
+<circle cx="345.0" cy="260.0" r="7" fill="#ec4899" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.9s"/>
+<text x="345.0" y="278.0" text-anchor="middle" fill="#ec4899" font-size="8" font-family="'Courier New', monospace">TS</text>
+
+<!-- RING 2 NODES -->
+
+<!-- SUPABASE -->
+<circle cx="462.9" cy="197.1" r="7" fill="#f472b6" opacity="0.15"/>
+<circle cx="462.9" cy="197.1" r="7" fill="#f472b6" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.0s"/>
+<text x="462.9" y="215.1" text-anchor="middle" fill="#f472b6" font-size="8" font-family="'Courier New', monospace">SUPABASE</text>
+
+<!-- PRISMA -->
+<circle cx="462.9" cy="322.9" r="7" fill="#f472b6" opacity="0.15"/>
+<circle cx="462.9" cy="322.9" r="7" fill="#f472b6" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.4s"/>
+<text x="462.9" y="340.9" text-anchor="middle" fill="#f472b6" font-size="8" font-family="'Courier New', monospace">PRISMA</text>
+
+<!-- SYSTEM DESIGN -->
+<circle cx="337.1" cy="322.9" r="7" fill="#f472b6" opacity="0.15"/>
+<circle cx="337.1" cy="322.9" r="7" fill="#f472b6" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.8s"/>
+<text x="337.1" y="340.9" text-anchor="middle" fill="#f472b6" font-size="8" font-family="'Courier New', monospace">SYSTEM DESIGN</text>
+
+<!-- KAFKA -->
+<circle cx="337.1" cy="197.1" r="7" fill="#f472b6" opacity="0.15"/>
+<circle cx="337.1" cy="197.1" r="7" fill="#f472b6" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.2s"/>
+<text x="337.1" y="215.1" text-anchor="middle" fill="#f472b6" font-size="8" font-family="'Courier New', monospace">KAFKA</text>
+
+<!-- RING 3 NODES -->
+
+<!-- FASTAPI -->
+<circle cx="544.0" cy="260.0" r="7" fill="#06b6d4" opacity="0.15"/>
+<circle cx="544.0" cy="260.0" r="7" fill="#06b6d4" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.0s"/>
+<text x="544.0" y="278.0" text-anchor="middle" fill="#06b6d4" font-size="8" font-family="'Courier New', monospace">FASTAPI</text>
+
+<!-- DOCKER -->
+<circle cx="489.8" cy="372.6" r="7" fill="#06b6d4" opacity="0.15"/>
+<circle cx="489.8" cy="372.6" r="7" fill="#06b6d4" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.3s"/>
+<text x="489.8" y="390.6" text-anchor="middle" fill="#06b6d4" font-size="8" font-family="'Courier New', monospace">DOCKER</text>
+
+<!-- KUBERNETES -->
+<circle cx="368.0" cy="400.4" r="7" fill="#06b6d4" opacity="0.15"/>
+<circle cx="368.0" cy="400.4" r="7" fill="#06b6d4" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.6s"/>
+<text x="368.0" y="418.4" text-anchor="middle" fill="#06b6d4" font-size="8" font-family="'Courier New', monospace">KUBERNETES</text>
+
+<!-- MONGODB -->
+<circle cx="270.3" cy="322.5" r="7" fill="#a855f7" opacity="0.15"/>
+<circle cx="270.3" cy="322.5" r="7" fill="#a855f7" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.9s"/>
+<text x="270.3" y="340.5" text-anchor="middle" fill="#a855f7" font-size="8" font-family="'Courier New', monospace">MONGODB</text>
+
+<!-- POSTGRESQL -->
+<circle cx="270.3" cy="197.5" r="7" fill="#a855f7" opacity="0.15"/>
+<circle cx="270.3" cy="197.5" r="7" fill="#a855f7" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.2s"/>
+<text x="270.3" y="215.5" text-anchor="middle" fill="#a855f7" font-size="8" font-family="'Courier New', monospace">POSTGRESQL</text>
+
+<!-- QDRANT -->
+<circle cx="368.0" cy="119.6" r="7" fill="#a855f7" opacity="0.15"/>
+<circle cx="368.0" cy="119.6" r="7" fill="#a855f7" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.5s"/>
+<text x="368.0" y="137.6" text-anchor="middle" fill="#a855f7" font-size="8" font-family="'Courier New', monospace">QDRANT</text>
+
+<!-- CHROMADB -->
+<circle cx="489.8" cy="147.4" r="7" fill="#a855f7" opacity="0.15"/>
+<circle cx="489.8" cy="147.4" r="7" fill="#a855f7" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.8s"/>
+<text x="489.8" y="165.4" text-anchor="middle" fill="#a855f7" font-size="8" font-family="'Courier New', monospace">CHROMADB</text>
+
+<!-- RING 4 NODES -->
+
+<!-- CLAUDE -->
+<circle cx="625.1" cy="320.3" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="625.1" cy="320.3" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.0s"/>
+<text x="625.1" y="338.3" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">CLAUDE</text>
+
+<!-- MCP -->
+<circle cx="493.2" cy="473.6" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="493.2" cy="473.6" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.3s"/>
+<text x="493.2" y="491.6" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">MCP</text>
+
+<!-- CLAUDE CODE -->
+<circle cx="291.1" cy="466.0" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="291.1" cy="466.0" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.6s"/>
+<text x="291.1" y="484.0" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">CLAUDE CODE</text>
+
+<!-- CURSOR -->
+<circle cx="171.1" cy="303.3" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="171.1" cy="303.3" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 0.9s"/>
+<text x="171.1" y="321.3" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">CURSOR</text>
+
+<!-- STREAMLIT -->
+<circle cx="223.4" cy="108.0" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="223.4" cy="108.0" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.2s"/>
+<text x="223.4" y="126.0" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">STREAMLIT</text>
+
+<!-- OLLAMA -->
+<circle cx="408.7" cy="27.2" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="408.7" cy="27.2" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.5s"/>
+<text x="408.7" y="45.2" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">OLLAMA</text>
+
+<!-- ANTIGRAVITY -->
+<circle cx="587.5" cy="121.6" r="7" fill="#f59e0b" opacity="0.15"/>
+<circle cx="587.5" cy="121.6" r="7" fill="#f59e0b" filter="url(#glow)" style="animation:node-breathe 3s ease-in-out infinite 1.8s"/>
+<text x="587.5" y="139.6" text-anchor="middle" fill="#f59e0b" font-size="8" font-family="'Courier New', monospace">ANTIGRAVITY</text>
+
+<!-- ============================================ -->
+<!-- LEFT PANEL - Skill Legend -->
+<!-- ============================================ -->
+<g font-family="'Courier New', monospace">
+<text x="18" y="18" fill="#94a3b8" font-size="9">[DOMAIN LEGEND]</text>
+<line x1="18" y1="24" x2="100" y2="24" stroke="#334155" stroke-width="0.5"/>
+<rect x="18" y="32" width="8" height="8" fill="#ec4899" rx="1"/>
+<text x="30" y="40" fill="#94a3b8" font-size="8">LANGUAGES</text>
+<rect x="18" y="48" width="8" height="8" fill="#f472b6" rx="1"/>
+<text x="30" y="56" fill="#94a3b8" font-size="8">WEB DEV</text>
+<rect x="18" y="64" width="8" height="8" fill="#06b6d4" rx="1"/>
+<text x="30" y="72" fill="#94a3b8" font-size="8">INFRA</text>
+<rect x="18" y="80" width="8" height="8" fill="#a855f7" rx="1"/>
+<text x="30" y="88" fill="#94a3b8" font-size="8">DATA</text>
+<rect x="18" y="96" width="8" height="8" fill="#f59e0b" rx="1"/>
+<text x="30" y="104" fill="#94a3b8" font-size="8">TOOLS</text>
+
+<text x="18" y="128" fill="#475569" font-size="7">NODE_COUNT: 22</text>
+<text x="18" y="140" fill="#475569" font-size="7">RINGS: FIBONACCI</text>
+</g>
+
+<!-- ============================================ -->
+<!-- RIGHT PANEL - Credentials -->
+<!-- ============================================ -->
+<g font-family="'Courier New', monospace">
+<text x="782" y="18" text-anchor="end" fill="#94a3b8" font-size="9">[CREDENTIALS]</text>
+<line x1="700" y1="24" x2="782" y2="24" stroke="#334155" stroke-width="0.5"/>
+<text x="782" y="40" text-anchor="end" fill="#475569" font-size="8">STANFORD ALGORITHMS</text>
+<text x="782" y="54" text-anchor="end" fill="#475569" font-size="8">HARVARD CS50</text>
+<text x="782" y="68" text-anchor="end" fill="#475569" font-size="8">IBM CYBERSECURITY</text>
+<text x="782" y="82" text-anchor="end" fill="#475569" font-size="8">ML SPECIALIZATION</text>
+<text x="782" y="96" text-anchor="end" fill="#475569" font-size="8">GITHUB FOUNDATION</text>
+
+<text x="782" y="120" text-anchor="end" fill="#94a3b8" font-size="9">[ACHIEVEMENT]</text>
+<line x1="700" y1="126" x2="782" y2="126" stroke="#334155" stroke-width="0.5"/>
+<text x="782" y="142" text-anchor="end" fill="#e3b341" font-size="8" style="animation:data-panel-blink 5s ease-in-out infinite">&#x2605; TOP 100 FINALIST</text>
+<text x="782" y="154" text-anchor="end" fill="#e3b341" font-size="8">  AI PITCH-A-THON</text>
+<text x="782" y="170" text-anchor="end" fill="#e3b341" font-size="8">&#x2605; WINNER: NORTHERN</text>
+<text x="782" y="182" text-anchor="end" fill="#e3b341" font-size="8">  INDIA SCIENCE FAIR</text>
+</g>
+
+<!-- Corner L-brackets -->
+<polyline points="4,20 4,4 20,4" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+<polyline points="780,4 796,4 796,20" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+<polyline points="796,500 796,516 780,516" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+<polyline points="20,516 4,516 4,500" fill="none" stroke="#ec4899" stroke-width="1" opacity="0.3"/>
+
+</svg>
