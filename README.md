@@ -33,7 +33,7 @@
 </div>
 
 <div align="center">
-  <img src="assets/about-agentic.svg" alt="Kaos AI Terminal" width="100%">
+  <img src="assets/about-agentic.svg" alt="Adnan Khan - AI Engineer Terminal" width="100%">
 </div>
 
 <br/>
@@ -43,7 +43,7 @@
 </div>
 
 <div align="center">
-  <img src="assets/vitruvian-kaos.svg" alt="Kaos Skills Map" width="100%">
+  <img src="assets/vitruvian-kaos.svg" alt="Adnan Khan - Skills Map" width="100%">
 </div>
 
 <br/>
@@ -53,7 +53,7 @@
 </div>
 
 <div align="center">
-  <img alt="Kaos Core Stack Architecture" src="assets/core-stack.svg" width="100%">
+  <img alt="Adnan Khan - Core Stack Architecture" src="assets/core-stack.svg" width="100%">
 </div>
 
 <br/>
